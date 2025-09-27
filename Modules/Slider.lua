@@ -84,18 +84,16 @@ function Slider:updateValue(options: table)
 		newValue = self.min
 	end
 
-	if newValue > self.max or newValue < self.min then
-		warn("[SWIN]: Value out of range, putting newValue to min value")
-		newValue = self.min
-	end
+	-- clamp вместо сброса
+	newValue = math.clamp(newValue, self.min, self.max)
 
-	-- применяем округление тут тоже
+	-- применяем округление под step
 	if self.step and self.step > 0 then
 		local mult = 1 / self.step
 		newValue = math.floor(newValue * mult + 0.5) / mult
 	end
 
-	local percent = (math.clamp(newValue, self.min, self.max) - self.min) / (self.max - self.min)
+	local percent = (newValue - self.min) / (self.max - self.min)
 
 	self.updateFill(percent)
 	self.value = newValue
@@ -103,5 +101,6 @@ function Slider:updateValue(options: table)
 	self.CurrentValueLabel.Text = tostring(newValue)
 	self.TextBox.Text = tostring(newValue)
 end
+
 
 return Slider
