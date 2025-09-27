@@ -75,7 +75,7 @@ local Modules = {
 	)(),
 	Slider = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Slider.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Slider.lua`,
 			true
 		)
 	)(),
