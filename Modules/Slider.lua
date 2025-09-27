@@ -85,7 +85,7 @@ function Slider:updateValue(options: table)
 	end
 
 	if newValue > self.max or newValue < self.min then
-		warn("Value out of range, putting newValue to min value")
+		warn("[SWIN]: Value out of range, putting newValue to min value")
 		newValue = self.min
 	end
 
