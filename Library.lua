@@ -57,19 +57,19 @@ local Assets = ScreenGui.Assets
 local Modules = {
 	Dropdown = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Dropdown.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Dropdown.lua`,
 			true
 		)
 	)(),
 	Toggle = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Toggle.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Toggle.lua`,
 			true
 		)
 	)(),
 	Popup = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Popup.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Popup.lua`,
 			true
 		)
 	)(),
@@ -81,25 +81,25 @@ local Modules = {
 	)(),
 	Keybind = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Keybind.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Keybind.lua`,
 			true
 		)
 	)(),
 	TextBox = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/TextBox.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/TextBox.lua`,
 			true
 		)
 	)(),
 	Navigation = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Navigation.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Navigation.lua`,
 			true
 		)
 	)(),
 	ColorPicker = loadstring(
 		game:HttpGet(
-			`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/ColorPicker.lua`,
+			`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/ColorPicker.lua`,
 			true
 		)
 	)(),
@@ -107,13 +107,13 @@ local Modules = {
 
 local Utility = loadstring(
 	game:HttpGet(
-		`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Utility.lua`,
+		`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Utility.lua`,
 		true
 	)
 )()
 local Theme = loadstring(
 	game:HttpGet(
-		`https://raw.githubusercontent.com/Grayy12/Leny-UI/refs/heads/{TESTING and "testing" or "main"}/Modules/Theme.lua`,
+		`https://raw.githubusercontent.com/azazelassembly/swui/refs/heads/{TESTING and "testing" or "main"}/Modules/Theme.lua`,
 		true
 	)
 )()
