@@ -2119,8 +2119,7 @@ function Library:createManager(options: table)
 	UI:createButton({
 		text = "Destroy UI",
 		callback = function()
-			targetResolution = 1
-			isStretching = false
+			stopStretch()
 			Library:destroy()
 		end,
 	})
