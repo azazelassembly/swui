@@ -3,22 +3,22 @@ Slider.__index = Slider
 
 function Slider.new(context: table)
 	local self = setmetatable(context, Slider)
-	-- Auto size textbox
+	self.value = self.default or self.min
 	self.autoSizeTextBox()
 	self.TextBox:GetPropertyChangedSignal("Text"):Connect(self.autoSizeTextBox)
 	self.TextBox.FocusLost:Connect(function()
 		local number = tonumber(self.TextBox.Text)
-		self:updateValue({value = number})
+		self:updateValue({ value = number })
 	end)
 
 	self.dragging = false
+	self:updateValue({ value = self.value })
+
 	return self
 end
 
 function Slider:handleSlider(connections)
 	local UserInputService = game:GetService("UserInputService")
-
-	-- нормальное округление с любым step
 	local function round(number: number)
 		if not self.step or self.step <= 0 then
 			return number
@@ -37,7 +37,7 @@ function Slider:handleSlider(connections)
 				local value = round((percent * (max - min)) + min)
 
 				self.showInfo()
-				self:updateValue({value = value})
+				self:updateValue({ value = value })
 			end
 		end)
 
@@ -55,7 +55,7 @@ function Slider:handleSlider(connections)
 				local value = round((percent * (max - min)) + min)
 
 				self.showInfo()
-				self:updateValue({value = value})
+				self:updateValue({ value = value })
 			end
 		end)
 
@@ -74,20 +74,16 @@ function Slider:handleSlider(connections)
 		table.insert(self.Connections, inputEnded)
 	end)
 
-	self:updateValue({value = self.value})
+	self:updateValue({ value = self.value })
 end
 
 function Slider:updateValue(options: table)
-	local newValue = options.value or self.min
+	local newValue = options.value or self.default or self.min
 
 	if typeof(newValue) ~= "number" then
-		newValue = self.min
+		newValue = self.default or self.min
 	end
-
-	-- clamp вместо сброса
 	newValue = math.clamp(newValue, self.min, self.max)
-
-	-- применяем округление под step
 	if self.step and self.step > 0 then
 		local mult = 1 / self.step
 		newValue = math.floor(newValue * mult + 0.5) / mult
@@ -101,6 +97,5 @@ function Slider:updateValue(options: table)
 	self.CurrentValueLabel.Text = tostring(newValue)
 	self.TextBox.Text = tostring(newValue)
 end
-
 
 return Slider
